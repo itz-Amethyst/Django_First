@@ -21,5 +21,5 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.index),
-    path("days/", include('challenges.urls'))
+    path("days-of-week/", include('challenges.urls'))
 ]
