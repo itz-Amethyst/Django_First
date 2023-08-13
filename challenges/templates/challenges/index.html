@@ -1,7 +1,12 @@
 {% extends 'layout.html' %}
+{% load static %}
 
 {% block page_title %}
 	Days
+{% endblock %}
+
+{% block header_references %}
+    <link rel="stylesheet" href="{% static 'challenges/style.css' %}">
 {% endblock %}
 
 {% block content %}
