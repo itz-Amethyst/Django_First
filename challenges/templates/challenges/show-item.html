@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block content %}
+   {% include 'challenges/shared/header.html' with active_page="Passed this value by with tag : It's Day_Details" %}
     <h1>{{ Day | title }}</h1>
     {% if Rango is not None %}
         {{ Rango }}

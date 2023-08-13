@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block content %}
+  {% include 'challenges/shared/header.html' with active_page="Passed this value by with tag : It's Days_list" %}
 	<ul>
         {% for day in days %}
             <li>
