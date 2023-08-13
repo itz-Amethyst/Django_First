@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Days Info</title>
-</head>
-<body>
+{% extends 'layout.html' %}
+
+{% block page_title %}
+    Days Info
+{% endblock %}
+
+{% block content %}
     <h1>{{ Day | title }}</h1>
     {% if Rango is not None %}
         {{ Rango }}
     {% else%}
         <p>There is no data!</p>
     {% endif %}
-</body>
-</html>
+{% endblock %}
