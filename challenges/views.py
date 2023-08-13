@@ -44,6 +44,12 @@ def dynamic_days_by_number(request, day):
 def dynamic_days(request , day):
 	day_data = days.get(day.lower())
 	if day_data is not None:
-		response = render_to_string('challenges/index.html')
-		return HttpResponse(response)
+		data = {
+			"Rango" : day_data
+		}
+		#DTL -> Django Template Language
+
+		return render(request, 'challenges/index.html' , data)
+		# response = render_to_string('challenges/index.html')
+		# return HttpResponse(response)
 	return HttpResponseNotFound("day does not exist")
