@@ -2,10 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Days Info</title>
+    <title>Title</title>
 </head>
 <body>
-    <h1>Thi is first django template</h1>
-    {{ Rango }}
+    <ul>
+        {% for day in days %}
+        <li>
+            <a href="{% url 'days-of-week' day %}">{{ day | title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
