@@ -6,6 +6,10 @@
 </head>
 <body>
     <h1>{{ Day | title }}</h1>
-    {{ Rango }}
+    {% if Rango is not None %}
+        {{ Rango }}
+    {% else%}
+        <p>There is no data!</p>
+    {% endif %}
 </body>
 </html>
