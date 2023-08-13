@@ -1,4 +1,4 @@
-from django.http import HttpResponse , HttpResponseNotFound , HttpResponseRedirect
+from django.http import HttpResponse , HttpResponseNotFound , HttpResponseRedirect , Http404
 from django.shortcuts import render
 from django.urls import reverse
 from django.template.loader import render_to_string
@@ -32,6 +32,10 @@ def dynamic_days_by_number(request, day):
 
 def dynamic_days(request, day):
 	day_data = days.get(day.lower())
+
+	if day_data is None:
+		raise Http404(render_to_string("404.html"))
+
 	data = {
 		"Rango": day_data,
 		"Day": day
