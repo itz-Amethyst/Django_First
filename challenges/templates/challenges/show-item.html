@@ -1,4 +1,9 @@
 {% extends 'layout.html' %}
+{% load static %}
+{% block header_references %}
+    <link rel="stylesheet" href="{% static 'challenges/show-item.css' %}">
+    <link rel="stylesheet" href="{% static 'challenges/shared/header.css' %}">
+{% endblock %}
 
 {% block page_title %}
     Days Info
@@ -8,7 +13,9 @@
    {% include 'challenges/shared/header.html' with active_page="Passed this value by with tag : It's Day_Details" %}
     <h1>{{ Day | title }}</h1>
     {% if Rango is not None %}
-        {{ Rango }}
+        <h2>
+            {{ Rango }}
+        </h2>
     {% else%}
         <p>There is no data!</p>
     {% endif %}
